@@ -1,0 +1,6 @@
+E:\Nhom2-19T1021203\19T1021203.DomainModels\bin\Debug\19T1021203.DomainModels.dll
+E:\Nhom2-19T1021203\19T1021203.DomainModels\bin\Debug\19T1021203.DomainModels.pdb
+E:\Nhom2-19T1021203\19T1021203.DomainModels\obj\Debug\19T1021203.DomainModels.csproj.AssemblyReference.cache
+E:\Nhom2-19T1021203\19T1021203.DomainModels\obj\Debug\19T1021203.DomainModels.csproj.CoreCompileInputs.cache
+E:\Nhom2-19T1021203\19T1021203.DomainModels\obj\Debug\19T1021203.DomainModels.dll
+E:\Nhom2-19T1021203\19T1021203.DomainModels\obj\Debug\19T1021203.DomainModels.pdb

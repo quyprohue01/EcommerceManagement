@@ -1,0 +1,9 @@
+E:\Nhom2-19T1021203\19T1021203.DataLayers\bin\Debug\19T1021203.DataLayers.dll
+E:\Nhom2-19T1021203\19T1021203.DataLayers\bin\Debug\19T1021203.DataLayers.pdb
+E:\Nhom2-19T1021203\19T1021203.DataLayers\bin\Debug\19T1021203.DomainModels.dll
+E:\Nhom2-19T1021203\19T1021203.DataLayers\bin\Debug\19T1021203.DomainModels.pdb
+E:\Nhom2-19T1021203\19T1021203.DataLayers\obj\Debug\19T1021203.DataLayers.csproj.AssemblyReference.cache
+E:\Nhom2-19T1021203\19T1021203.DataLayers\obj\Debug\19T1021203.DataLayers.csproj.CoreCompileInputs.cache
+E:\Nhom2-19T1021203\19T1021203.DataLayers\obj\Debug\19T1021203.DataLayers.csproj.CopyComplete
+E:\Nhom2-19T1021203\19T1021203.DataLayers\obj\Debug\19T1021203.DataLayers.dll
+E:\Nhom2-19T1021203\19T1021203.DataLayers\obj\Debug\19T1021203.DataLayers.pdb
