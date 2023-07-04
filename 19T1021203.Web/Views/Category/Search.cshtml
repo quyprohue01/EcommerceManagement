@@ -1,0 +1,59 @@
+﻿@model _19T1021203.Web.Models.CategorySearhOutput
+@{
+    Layout = null;
+}
+
+
+<p>có <strong>@string.Format("{0:N0}", Model.RowCount)</strong> Nhà cung cấp trong tổng số <strong>@string.Format("{0:N0}", Model.PageCount)</strong> trang</p>
+<div class="box-body">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="bg-primary">
+                <th>Tên loại hàng</th>
+                <th>Mô tả</th>
+                @*<th>Mã Loại Cha</th>*@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Data)
+            {
+                <tr>
+                    <td>@item.CategoryName</td>
+                    <td>@item.Description</td>
+                    @*<td>@item.ParentCategoryId</td>*@
+                    <td>
+                        <a href="~/Category/Edit/@item.CategoryID" class="btn btn-sm btn-success" title="Sửa">
+                            <i class="glyphicon glyphicon-edit"></i>
+
+                        </a>
+                        <a href="~/Category/Delete/@item.CategoryID" class="btn btn-sm btn-danger" title="Xoá">
+                            <i class="glyphicon glyphicon-trash"></i>
+
+                        </a>
+
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+    <div class="text-center">
+        <ul class="pagination">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                if (i == Model.Page)
+                {
+                    <li class="active"><a href="#">@i</a></li>
+                }
+                else
+                {
+                    <li><a href="javascript:;" onclick="doSearch(@i)">@i</a></li>
+                }
+            }
+
+        </ul>
+    </div>
+
+</div>

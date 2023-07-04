@@ -1,0 +1,67 @@
+﻿@model _19T1021203.Web.Models.CustomerSearchOutput
+@{
+    Layout = null;
+}
+<p>có <strong>@string.Format("{0:N0}", Model.RowCount)</strong> Nhà cung cấp trong tổng số <strong>@string.Format("{0:N0}", Model.PageCount)</strong> trang</p>
+<div class="box-body">
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="bg-primary">
+                <th>Tên Khách Hàng</th>
+                <th>Tên Liên hệ</th>
+                <th>Địa Chỉ</th>
+                <th>Email</th>
+                <th>Quốc Gia</th>
+                <th>Thành Phố </th>
+                <th>Bưu Chính</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Data)
+            {
+                <tr>
+                    <td>@item.CustomerName</td>
+                    <td>@item.ContactName</td>
+                    <td>@item.Address</td>
+                    <td>@item.Email</td>
+
+                    <td>@item.Country</td>
+                    <td>@item.City</td>
+                    <td>@item.PostalCode</td>
+                    <td>
+                        <a href="~/Customer/Edit/@item.CustomerID" class="btn btn-sm btn-success" title="Sửa">
+                            <i class="glyphicon glyphicon-edit"></i>
+
+                        </a>
+                        <a href="~/Customer/Delete/@item.CustomerID" class="btn btn-sm btn-danger" title="Xoá">
+                            <i class="glyphicon glyphicon-trash"></i>
+
+                        </a>
+
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+    <div class="text-center">
+        <ul class="pagination">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                if (i == Model.Page)
+                {
+                    <li class="active"><a href="#">@i</a></li>
+                }
+                else
+                {
+                    <li><a href="javascript:;" onclick="doSearch(@i)">@i</a></li>
+                }
+            }
+
+        </ul>
+    </div>
+</div>
+

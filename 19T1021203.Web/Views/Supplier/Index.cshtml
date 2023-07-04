@@ -1,0 +1,57 @@
+﻿@model _19T1021203.Web.Models.PaginationSearchInput
+@{
+    ViewBag.Title = "Quản lý nhà cung cấp";
+}
+
+
+<div class="box box-primary">
+    <form id="formSearch" action="~/Supplier/Search">
+        <div class="box-body">
+            <div class="input-group input-group-sm">
+                <input type="hidden" name="PageSize" value="@Model.PageSize" />
+                <input type="text" class="form-control" name="searchValue" autofocus value="@Model.SearchValue">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-info btn-flat"> Tìm kiếm</button>
+                    <a href="~/Supplier/Create" class="btn btn-primary">Bổ sung</a>
+                </span>
+            </div>
+        </div>
+    </form>
+
+    <div id="searchResult"></div>
+
+
+
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#formSearch").submit(function (e) {
+                e.preventDefault();
+                doSearch(1);
+                return;
+            });
+            doSearch(@Model.Page);
+        })
+        function doSearch(page) {
+            var url = $("#formSearch").prop("action");
+            var postData = $("#formSearch").serializeArray();
+            postData.push({ "name": "page", "value": page });
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: postData,
+                error: function () {
+                    alert("Your request is not valid!");
+                },
+                success: function (data) {
+                    $("#searchResult").html(data);
+                }
+            });
+
+            return;
+        }
+    </script>
+}

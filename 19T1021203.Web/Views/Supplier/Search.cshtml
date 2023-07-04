@@ -1,0 +1,66 @@
+﻿@model _19T1021203.Web.Models.SupplierSearchOutput
+@{
+    Layout = null;
+}
+
+<div class="box-body">
+    <p>Có <strong>@string.Format("{0:N0}", Model.RowCount)</strong> nhà cung cấp trong tổng số <strong>@string.Format("{0:N0}", Model.PageCount)</strong> trang</p>
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+            <tr class="bg-primary">
+                <th>Tên nhà cung cấp</th>
+                <th>Tên giao dịch</th>
+                <th>Địa chỉ</th>
+                <th>Số điện thoại</th>
+                <th>Quốc Gia</th>
+                <th>Thành phố</th>
+                <th>Mã Bưu Chính</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Data)
+            {
+                <tr>
+                    <td style="width:17%">@item.SupplierName</td>
+                    <td style="width:17%">@item.ContactName</td>
+                    <td style="width:17%">@item.Address</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Country</td>
+                    <td>@item.City</td>
+                    <td style="width:10%">@item.PostalCode</td>
+
+                    <td>
+                        <a href="~/Supplier/Edit/@item.SupplierID" class="btn btn-sm btn-success">
+
+                            <i class="glyphicon glyphicon-edit"></i>
+
+                        </a>
+                        <a href="~/Supplier/Delete/@item.SupplierID" class="btn btn-sm btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>
+
+                        </a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <div class="text-center">
+        <ul class="pagination">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                if (i == Model.Page)
+                {
+                    <li class="active"><a href="#">@i</a></li>
+                }
+                else
+                {
+                    <li><a href="javascript:;" onclick="doSearch(@i)">@i</a></li>
+                }
+            }
+
+        </ul>
+    </div>
+</div>
